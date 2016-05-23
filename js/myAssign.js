@@ -3,14 +3,14 @@
     if (typeof Object.assign != 'function') {
         (function() {
             Object.assign = function() {
-                var copy = arguments[0];
+                var myObj = arguments[0];
                 for (var i = 1; i < arguments.length; i++) {
-                    var My_obj = arguments[i];
-                    for (var key in obj) {
-                        copy[key] = My_obj[key]    
-                    }
+                    var obj = arguments[i];
+                    for (var par in obj) {
+                            myObj[par] = obj[par];
+                        }
                 }
-                return copy;
+                return myObj;
             };
         })
       }
